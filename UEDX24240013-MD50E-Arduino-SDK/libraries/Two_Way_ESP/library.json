@@ -1,0 +1,19 @@
+{
+    "name": "Two Way ESP",
+    "keywords": "esp32, esp_now, ESPNOW",
+    "description": "Provides a way to write strings and bytes to another ESP32 using the ESP_NOW protocol",
+    "license": "MIT",
+    "version": "0.2",
+    "frameworks": "arduino",
+    "platforms": "espressif32",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/KevinMiller77/TwoWayESP.git"
+    },
+    "authors": [
+        {
+            "name": "Kevin Miller",
+            "email": "kevinamiller77@gmail.com"
+        }
+    ]
+}

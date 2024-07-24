@@ -1,0 +1,10 @@
+#######################################
+# Methods and Functions
+#######################################
+
+Begin	KEYWORD2
+Available	KEYWORD2
+GetString	KEYWORD2
+GetBytes	KEYWORD2
+SendString	KEYWORD2
+SendBytes	KEYWORD2

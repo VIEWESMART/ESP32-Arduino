@@ -1,0 +1,98 @@
+name: Compile Examples
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/compile-examples.yml"
+      - "library.properties"
+      - "examples/**"
+      - "src/**"
+  push:
+    paths:
+      - ".github/workflows/compile-examples.yml"
+      - "library.properties"
+      - "examples/**"
+      - "src/**"
+  # Scheduled trigger checks for breakage caused by changes to external resources (libraries, platforms)
+  schedule:
+    # run every Saturday at 3 AM UTC
+    - cron: "0 3 * * 6"
+  # See: https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#workflow_dispatch
+  workflow_dispatch:
+  # See: https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#repository_dispatch
+  repository_dispatch:
+
+jobs:
+  build:
+    name: ${{ matrix.board.fqbn }}
+    runs-on: ubuntu-latest
+
+    env:
+      SKETCHES_REPORTS_PATH: sketches-reports
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        board:
+          - fqbn: "esp32:esp32:esp32"
+            type: esp32
+            artifact-name-suffix: esp32-esp32-esp32
+          - fqbn: "arduino:esp32:nano_nora"
+            type: arduino_esp32
+            artifact-name-suffix: arduino-esp32-arduino_esp32
+
+        include:
+          - board:
+              type: esp32
+            platforms: |
+              - name: esp32:esp32
+                source-url: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+            libraries: |
+              - name: Arduino_DebugUtils
+              - name: ArduinoHttpClient
+            sketch-paths: |
+              - examples/OTA_Arduino_Server
+              - examples/OTA_GitHub_Server
+              - examples/LOLIN_32_Blink
+          - board:
+              type: arduino_esp32
+            platforms: |
+              - name: arduino:esp32
+            libraries: |
+              - name: Arduino_DebugUtils
+              - name: ArduinoHttpClient
+            sketch-paths: |
+              - examples/OTA_Arduino_Server
+              - examples/OTA_GitHub_Server
+              - examples/NANO_ESP32_Blink
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install ESP32 platform dependencies
+        if: matrix.board.type == 'esp32'
+        run: pip3 install pyserial
+
+      - name: Compile examples
+        uses: arduino/compile-sketches@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          platforms: ${{ matrix.platforms }}
+          fqbn: ${{ matrix.board.fqbn }}
+          libraries: |
+            # Install the library from the local path.
+            - source-path: ./
+            ${{ matrix.libraries }}
+          sketch-paths: |
+            ${{ matrix.sketch-paths }}
+          enable-deltas-report: true
+          sketches-report-path: ${{ env.SKETCHES_REPORTS_PATH }}
+
+      - name: Save memory usage change report as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sketches-report-${{ matrix.board.artifact-name-suffix }}
+          if-no-files-found: error
+          path: ${{ env.SKETCHES_REPORTS_PATH }}
