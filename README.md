@@ -1,5 +1,8 @@
-# ESP32S3-Arduino-SDK
+# ESP32S3-Arduino
+## example
  This warehouse mainly provides you with the Arduino demo of VIEWE's smart screen development board. Among them, the display screen, the knob encoder and the button of the knob smart screen have been driven, and a simple LVGL example has been added. For touch screens we also drive the display, touch and add a simple example of LVGL. So you can use it for free development.
+ ## doc
+Super detailed Arduino environment configuration
 
 # WHO WE ARE
 ### We are Display Expert
@@ -10,6 +13,9 @@
 #### Total solutions of Display Screen, Touch Screen and Full Lamination
 #### Smart Display: Uart Display, IOT Display, Raspberry Pi Display, Arduino Display…
 #### Innovative Display: Ecolity Display, Sunreadable Display, NearEye Display..
+
+# WIKI:
+## www.display-wiki.com
 
  # The following is the display of various models of smart screen development boards:
   ### The image below is just a rendering, and each screen size is not the same.
@@ -25,7 +31,7 @@
 
  
 # For detailed Arduino configuration, please refer to:
-## https://github.com/VIEWESMART/ESP32S3-Arduino-SDK/tree/main/doc
+## https://github.com/VIEWESMART/ESP32-Arduino/tree/main/doc
 
 
 # Here's a quick overview of the Arduino configuration:
