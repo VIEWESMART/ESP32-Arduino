@@ -21,7 +21,12 @@
 
 ###           5.0inch:
  ![5.0Primary](https://github.com/VIEWESMART/image/blob/main/5.0inch_Primary.png)![5.0secondary](https://github.com/VIEWESMART/image/blob/main/5.0inch_Secondary.png)
+
+
+ 
 # For detailed Arduino configuration, please refer to:
+## https://github.com/VIEWESMART/ESP32S3-Arduino-SDK/tree/main/doc
+
 
 # Here's a quick overview of the Arduino configuration:
 ## Download and install Arduino IDE.
