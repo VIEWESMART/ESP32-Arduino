@@ -257,7 +257,7 @@ void inputTask(void *pvParameters) {
     int32_t current_encoder_value = myEnc.read() / 2;
     int32_t encoder_diff = current_encoder_value - last_encoder_value;
 
-    if (encoder_diff != 0) {
+    if (!autoScroll && encoder_diff != 0) {
       Serial.print("Encoder diff: ");
       Serial.println(encoder_diff);
       currentPage += encoder_diff;
