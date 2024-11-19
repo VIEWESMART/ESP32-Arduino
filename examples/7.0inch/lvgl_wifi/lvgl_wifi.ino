@@ -183,7 +183,7 @@ void setup()
     Serial.println(WiFi.localIP());
     
     server.begin();
-    digtalwrite(TFT_BL, HIGH);
+    digitalWrite(TFT_BL, HIGH);
 }
 
 void loop()
