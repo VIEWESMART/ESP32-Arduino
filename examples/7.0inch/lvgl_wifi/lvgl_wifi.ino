@@ -138,7 +138,7 @@ void setup()
 
     Serial.println("Initialize LVGL");
     lvgl_port_init(panel->getLcd(), panel->getTouch());
-    pinMode(TFT_BL, OUTPUT);c:\Users\huo\Videos\2024-11-18 15-38-38.mkv
+    pinMode(TFT_BL, OUTPUT);
     analogWrite(TFT_BL,255);
     Serial.println("Create UI");
     /* Lock the mutex due to the LVGL APIs are not thread-safe */
@@ -183,6 +183,7 @@ void setup()
     Serial.println(WiFi.localIP());
     
     server.begin();
+    digtalwrite(TFT_BL, HIGH);
 }
 
 void loop()
