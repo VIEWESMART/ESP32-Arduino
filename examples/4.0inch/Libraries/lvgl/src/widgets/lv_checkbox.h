@@ -28,7 +28,7 @@ extern "C" {
 
 typedef struct {
     lv_obj_t obj;
-    const char * txt;
+    char * txt;
     uint32_t static_txt : 1;
 } lv_checkbox_t;
 

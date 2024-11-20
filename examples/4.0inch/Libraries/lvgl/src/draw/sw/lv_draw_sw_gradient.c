@@ -21,7 +21,6 @@
     #define GRAD_CONV(t, x) t = x
 #endif
 
-#undef ALIGN
 #if defined(LV_ARCH_64)
     #define ALIGN(X)    (((X) + 7) & ~7)
 #else
@@ -46,6 +45,7 @@ static lv_res_t kill_oldest_item(lv_grad_t * c, void * ctx);
 static lv_res_t find_item(lv_grad_t * c, void * ctx);
 static void free_item(lv_grad_t * c);
 static  uint32_t compute_key(const lv_grad_dsc_t * g, lv_coord_t w, lv_coord_t h);
+
 
 /**********************
  *   STATIC VARIABLE
@@ -86,6 +86,8 @@ static lv_grad_t * next_in_cache(lv_grad_t * item)
 
     if(item == NULL)
         return (lv_grad_t *)LV_GC_ROOT(_lv_grad_cache_mem);
+    if(item == NULL)
+        return NULL;
 
     size_t s = get_cache_item_size(item);
     /*Compute the size for this cache item*/
@@ -227,6 +229,7 @@ static lv_grad_t * allocate_item(const lv_grad_dsc_t * g, lv_coord_t w, lv_coord
     return item;
 }
 
+
 /**********************
  *     FUNCTIONS
  **********************/
@@ -291,7 +294,7 @@ lv_grad_t * lv_gradient_get(const lv_grad_dsc_t * g, lv_coord_t w, lv_coord_t h)
     return item;
 }
 
-lv_grad_color_t LV_ATTRIBUTE_FAST_MEM lv_gradient_calculate(const lv_grad_dsc_t * dsc, lv_coord_t range,
+LV_ATTRIBUTE_FAST_MEM lv_grad_color_t lv_gradient_calculate(const lv_grad_dsc_t * dsc, lv_coord_t range,
                                                             lv_coord_t frac)
 {
     lv_grad_color_t tmp;
@@ -322,8 +325,6 @@ lv_grad_color_t LV_ATTRIBUTE_FAST_MEM lv_gradient_calculate(const lv_grad_dsc_t 
             break;
         }
     }
-
-    LV_ASSERT(d != 0);
 
     /*Then interpolate*/
     frac -= min;

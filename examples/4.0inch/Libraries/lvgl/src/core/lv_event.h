@@ -41,7 +41,7 @@ typedef enum {
     LV_EVENT_LONG_PRESSED_REPEAT, /**< Called after `long_press_time` in every `long_press_repeat_time` ms.  Not called if scrolled.*/
     LV_EVENT_CLICKED,             /**< Called on release if not scrolled (regardless to long press)*/
     LV_EVENT_RELEASED,            /**< Called in every cases when the object has been released*/
-    LV_EVENT_SCROLL_BEGIN,        /**< Scrolling begins. The event parameter is a pointer to the animation of the scroll. Can be modified*/
+    LV_EVENT_SCROLL_BEGIN,        /**< Scrolling begins*/
     LV_EVENT_SCROLL_END,          /**< Scrolling ends*/
     LV_EVENT_SCROLL,              /**< Scrolling*/
     LV_EVENT_GESTURE,             /**< A gesture is detected. Get the gesture with `lv_indev_get_gesture_dir(lv_indev_get_act());` */
@@ -85,6 +85,7 @@ typedef enum {
     LV_EVENT_GET_SELF_SIZE,       /**< Get the internal size of a widget*/
 
     _LV_EVENT_LAST,               /** Number of default events*/
+
 
     LV_EVENT_PREPROCESS = 0x80,   /** This is a flag that can be set with an event so it's processed
                                       before the class default event processing */
@@ -221,6 +222,7 @@ uint32_t lv_event_register_id(void);
  * @param obj pointer to an object to mark as deleted
  */
 void _lv_event_mark_deleted(struct _lv_obj_t * obj);
+
 
 /**
  * Add an event handler function for an object.

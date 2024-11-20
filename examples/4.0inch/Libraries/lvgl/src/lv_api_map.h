@@ -41,6 +41,7 @@ static inline LV_ATTRIBUTE_TIMER_HANDLER uint32_t lv_task_handler(void)
  *      MACROS
  **********************/
 
+
 /**********************
  * INLINE FUNCTIONS
  **********************/
@@ -67,6 +68,8 @@ static inline void lv_obj_move_background(lv_obj_t * obj)
 {
     lv_obj_move_to_index(obj, 0);
 }
+
+
 
 /**********************
  * DEPRECATED FUNCTIONS

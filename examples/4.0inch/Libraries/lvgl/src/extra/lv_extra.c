@@ -42,16 +42,8 @@ void lv_extra_init(void)
     lv_grid_init();
 #endif
 
-#if LV_USE_MSG
-    lv_msg_init();
-#endif
-
 #if LV_USE_FS_FATFS != '\0'
     lv_fs_fatfs_init();
-#endif
-
-#if LV_USE_FS_LITTLEFS != '\0'
-    lv_fs_littlefs_init();
 #endif
 
 #if LV_USE_FS_STDIO != '\0'

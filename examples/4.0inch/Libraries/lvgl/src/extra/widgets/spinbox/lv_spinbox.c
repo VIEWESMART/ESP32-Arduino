@@ -105,6 +105,7 @@ void lv_spinbox_set_digit_format(lv_obj_t * obj, uint8_t digit_count, uint8_t se
     if(digit_count > LV_SPINBOX_MAX_DIGIT_COUNT) digit_count = LV_SPINBOX_MAX_DIGIT_COUNT;
 
     if(separator_position >= digit_count) separator_position = 0;
+    if(separator_position > LV_SPINBOX_MAX_DIGIT_COUNT) separator_position = LV_SPINBOX_MAX_DIGIT_COUNT;
 
     if(digit_count < LV_SPINBOX_MAX_DIGIT_COUNT) {
         int64_t max_val = lv_pow(10, digit_count);
@@ -157,7 +158,7 @@ void lv_spinbox_set_range(lv_obj_t * obj, int32_t range_min, int32_t range_max)
  * @param spinbox pointer to spinbox
  * @param pos selected position in spinbox
  */
-void lv_spinbox_set_cursor_pos(lv_obj_t * obj, uint8_t pos)
+void lv_spinbox_set_pos(lv_obj_t * obj, uint8_t pos)
 {
     LV_ASSERT_OBJ(obj, MY_CLASS);
     lv_spinbox_t * spinbox = (lv_spinbox_t *)obj;
@@ -433,6 +434,9 @@ static void lv_spinbox_event(const lv_obj_class_t * class_p, lv_event_t * e)
         }
         else if(c == LV_KEY_DOWN) {
             lv_spinbox_decrement(obj);
+        }
+        else {
+            lv_textarea_add_char(obj, c);
         }
     }
 }

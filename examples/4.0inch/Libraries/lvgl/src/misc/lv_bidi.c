@@ -339,7 +339,7 @@ static uint32_t lv_bidi_get_next_paragraph(const char * txt)
 
 /**
  * Get the direction of a character
- * @param letter a Unicode character
+ * @param letter an Unicode character
  * @return `LV_BASE_DIR_RTL/LTR/WEAK/NEUTRAL`
  */
 static lv_base_dir_t lv_bidi_get_letter_dir(uint32_t letter)
@@ -352,7 +352,7 @@ static lv_base_dir_t lv_bidi_get_letter_dir(uint32_t letter)
 }
 /**
  * Tell whether a character is weak or not
- * @param letter a Unicode character
+ * @param letter an Unicode character
  * @return true/false
  */
 static bool lv_bidi_letter_is_weak(uint32_t letter)
@@ -371,11 +371,12 @@ static bool lv_bidi_letter_is_weak(uint32_t letter)
 }
 /**
  * Tell whether a character is RTL or not
- * @param letter a Unicode character
+ * @param letter an Unicode character
  * @return true/false
  */
 static bool lv_bidi_letter_is_rtl(uint32_t letter)
 {
+    if(letter >= 0x5d0 && letter <= 0x5ea) return true;
     if(letter == 0x202E) return true;               /*Unicode of LV_BIDI_RLO*/
 
     /*Check for Persian and Arabic characters [https://en.wikipedia.org/wiki/Arabic_script_in_Unicode]*/
@@ -383,16 +384,12 @@ static bool lv_bidi_letter_is_rtl(uint32_t letter)
     if(letter >= 0xFB50 && letter <= 0xFDFF) return true;
     if(letter >= 0xFE70 && letter <= 0xFEFF) return true;
 
-    /*Check for Hebrew characters [https://en.wikipedia.org/wiki/Unicode_and_HTML_for_the_Hebrew_alphabet]*/
-    if(letter >= 0x590 && letter <= 0x5FF) return true;
-    if(letter >= 0xFB1D && letter <= 0xFB4F) return true;
-
     return false;
 }
 
 /**
  * Tell whether a character is neutral or not
- * @param letter a Unicode character
+ * @param letter an Unicode character
  * @return true/false
  */
 static bool lv_bidi_letter_is_neutral(uint32_t letter)

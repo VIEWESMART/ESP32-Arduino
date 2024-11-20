@@ -21,6 +21,7 @@ extern "C" {
 #include <stdint.h>
 #include <stddef.h>
 
+
 /*********************
  *      DEFINES
  *********************/
@@ -54,6 +55,7 @@ typedef struct lv_lru_t {
     lv_lru_item_t * free_items;
 } lv_lru_t;
 
+
 /**********************
  * GLOBAL PROTOTYPES
  **********************/
@@ -69,12 +71,6 @@ lv_lru_res_t lv_lru_get(lv_lru_t * cache, const void * key, size_t key_size, voi
 
 lv_lru_res_t lv_lru_remove(lv_lru_t * cache, const void * key, size_t key_size);
 
-/**
- * remove the least recently used item
- *
- * @todo we can optimise this by finding the n lru items, where n = required_space / average_length
- */
-void lv_lru_remove_lru_item(lv_lru_t * cache);
 /**********************
  *      MACROS
  **********************/

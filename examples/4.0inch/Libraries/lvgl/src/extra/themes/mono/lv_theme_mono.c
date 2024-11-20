@@ -52,6 +52,7 @@ typedef struct {
 #endif
 } my_theme_styles_t;
 
+
 /**********************
  *  STATIC PROTOTYPES
  **********************/
@@ -158,6 +159,7 @@ static void style_init(bool dark_bg, const lv_font_t * font)
 #endif
 }
 
+
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
@@ -173,7 +175,7 @@ lv_theme_t * lv_theme_mono_init(lv_disp_t * disp, bool dark_bg, const lv_font_t 
     /*This trick is required only to avoid the garbage collection of
      *styles' data if LVGL is used in a binding (e.g. Micropython)
      *In a general case styles could be in simple `static lv_style_t my_style...` variables*/
-    if(!inited) {
+    if(!lv_theme_mono_is_inited()) {
         inited = false;
         LV_GC_ROOT(_lv_theme_default_styles) = lv_mem_alloc(sizeof(my_theme_styles_t));
         styles = (my_theme_styles_t *)LV_GC_ROOT(_lv_theme_default_styles);
@@ -193,6 +195,7 @@ lv_theme_t * lv_theme_mono_init(lv_disp_t * disp, bool dark_bg, const lv_font_t 
 
     return (lv_theme_t *)&theme;
 }
+
 
 static void theme_apply(lv_theme_t * th, lv_obj_t * obj)
 {

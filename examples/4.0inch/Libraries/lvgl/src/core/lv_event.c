@@ -30,6 +30,7 @@ static lv_event_dsc_t * lv_obj_get_event_dsc(const lv_obj_t * obj, uint32_t id);
 static lv_res_t event_send_core(lv_event_t * e);
 static bool event_is_bubbled(lv_event_t * e);
 
+
 /**********************
  *  STATIC VARIABLES
  **********************/
@@ -79,6 +80,7 @@ lv_res_t lv_event_send(lv_obj_t * obj, lv_event_code_t event_code, void * param)
     return res;
 }
 
+
 lv_res_t lv_obj_event_base(const lv_obj_class_t * class_p, lv_event_t * e)
 {
     const lv_obj_class_t * base;
@@ -101,6 +103,7 @@ lv_res_t lv_obj_event_base(const lv_obj_class_t * class_p, lv_event_t * e)
 
     return res;
 }
+
 
 lv_obj_t * lv_event_get_target(lv_event_t * e)
 {
@@ -137,6 +140,7 @@ void lv_event_stop_processing(lv_event_t * e)
     e->stop_processing = 1;
 }
 
+
 uint32_t lv_event_register_id(void)
 {
     static uint32_t last_id = _LV_EVENT_LAST;
@@ -153,6 +157,7 @@ void _lv_event_mark_deleted(lv_obj_t * obj)
         e = e->prev;
     }
 }
+
 
 struct _lv_event_dsc_t * lv_obj_add_event_cb(lv_obj_t * obj, lv_event_cb_t event_cb, lv_event_code_t filter,
                                              void * user_data)
@@ -221,6 +226,7 @@ bool lv_obj_remove_event_cb_with_user_data(lv_obj_t * obj, lv_event_cb_t event_c
     return false;
 }
 
+
 bool lv_obj_remove_event_dsc(lv_obj_t * obj, struct _lv_event_dsc_t * event_dsc)
 {
     LV_ASSERT_OBJ(obj, MY_CLASS);
@@ -248,7 +254,7 @@ bool lv_obj_remove_event_dsc(lv_obj_t * obj, struct _lv_event_dsc_t * event_dsc)
 void * lv_obj_get_event_user_data(struct _lv_obj_t * obj, lv_event_cb_t event_cb)
 {
     LV_ASSERT_OBJ(obj, MY_CLASS);
-    if(obj->spec_attr == NULL) return NULL;
+    if(obj->spec_attr == NULL) return false;
 
     int32_t i = 0;
     for(i = 0; i < obj->spec_attr->event_dsc_cnt; i++) {
@@ -430,7 +436,7 @@ static lv_res_t event_send_core(lv_event_t * e)
     }
 
     lv_res_t res = LV_RES_OK;
-    lv_event_dsc_t * event_dsc = lv_obj_get_event_dsc(e->current_target, 0);
+    lv_event_dsc_t * event_dsc = res == LV_RES_INV ? NULL : lv_obj_get_event_dsc(e->current_target, 0);
 
     uint32_t i = 0;
     while(event_dsc && res == LV_RES_OK) {

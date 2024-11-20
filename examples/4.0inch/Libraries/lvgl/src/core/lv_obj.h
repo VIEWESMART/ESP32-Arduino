@@ -63,7 +63,7 @@ typedef uint16_t lv_state_t;
  * The possible parts of widgets.
  * The parts can be considered as the internal building block of the widgets.
  * E.g. slider = background + indicator + knob
- * Not all parts are used by every widget
+ * Note every part is used by every widget
  */
 enum {
     LV_PART_MAIN         = 0x000000,   /**< A background like rectangle*/
@@ -121,6 +121,7 @@ enum {
 
 };
 
+
 typedef uint32_t lv_obj_flag_t;
 
 /**
@@ -166,8 +167,7 @@ typedef struct {
     lv_scroll_snap_t scroll_snap_x : 2;     /**< Where to align the snappable children horizontally*/
     lv_scroll_snap_t scroll_snap_y : 2;     /**< Where to align the snappable children vertically*/
     lv_dir_t scroll_dir : 4;                /**< The allowed scroll direction(s)*/
-    uint8_t event_dsc_cnt : 6;              /**< Number of event callbacks stored in `event_dsc` array*/
-    uint8_t layer_type : 2;    /**< Cache the layer type here. Element of @lv_intermediate_layer_type_t */
+    uint8_t event_dsc_cnt;                  /**< Number of event callbacks stored in `event_dsc` array*/
 } _lv_obj_spec_attr_t;
 
 typedef struct _lv_obj_t {
@@ -182,14 +182,13 @@ typedef struct _lv_obj_t {
     lv_obj_flag_t flags;
     lv_state_t state;
     uint16_t layout_inv : 1;
-    uint16_t readjust_scroll_after_layout : 1;
     uint16_t scr_layout_inv : 1;
     uint16_t skip_trans : 1;
     uint16_t style_cnt  : 6;
     uint16_t h_layout   : 1;
     uint16_t w_layout   : 1;
-    uint16_t being_deleted   : 1;
 } lv_obj_t;
+
 
 /**********************
  * GLOBAL PROTOTYPES
@@ -223,6 +222,7 @@ bool lv_is_initialized(void);
  */
 lv_obj_t * lv_obj_create(lv_obj_t * parent);
 
+
 /*=====================
  * Setter functions
  *====================*/
@@ -240,6 +240,7 @@ void lv_obj_add_flag(lv_obj_t * obj, lv_obj_flag_t f);
  * @param f     OR-ed values from `lv_obj_flag_t` to set.
  */
 void lv_obj_clear_flag(lv_obj_t * obj, lv_obj_flag_t f);
+
 
 /**
  * Add one or more states to the object. The other state bits will remain unchanged.
@@ -398,6 +399,7 @@ static inline lv_coord_t lv_obj_dpx(const lv_obj_t * obj, lv_coord_t n)
 #else
 #  define LV_TRACE_OBJ_CREATE(...)
 #endif
+
 
 #ifdef __cplusplus
 } /*extern "C"*/
