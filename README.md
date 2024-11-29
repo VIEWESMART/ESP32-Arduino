@@ -1,5 +1,17 @@
 # ESP32-Arduino
-## example
+This repository mainly introduces the usage of ESP32 in Arduino, covering various aspects such as examples, environment configuration, frequently asked questions (FAQ), and driver libraries. The following is the structure of the repository, which will help you find the corresponding files:
+* `ESP32-Arduino`
+  * `doc`
+  * `examples`(It mainly contains some display driver examples with LVGL added for different models and sizes)
+    * `1.3inch`
+    * `1.9inch`
+    * `...` 
+  * `general example`(It is mainly applicable to touch-enabled display screens,But the 1.9-inch ones are not included for the time being)
+    * `LVGL/v8`
+    * `Panel/PanelTest`
+    * `PlatformIO`
+    * `SquareLine/v8`
+## examples
  This warehouse mainly provides you with the Arduino demo of VIEWE's smart screen development board. Among them, the display screen, the knob encoder and the button of the knob smart screen have been driven, and a simple LVGL example has been added. For touch screens we also drive the display, touch and add a simple example of LVGL. So you can use it for free development.
  ## doc
 Super detailed Arduino environment configuration
