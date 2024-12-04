@@ -6,19 +6,14 @@
 
 - [如何使用](#如何使用)
   - [目录](#目录)
-  - [基于 ESP-IDF 框架](#基于-esp-idf-框架)
-    - [依赖项及版本](#依赖项及版本)
-    - [添加到工程](#添加到工程)
-    - [配置说明](#配置说明)
   - [基于 Arduino IDE](#基于-arduino-ide)
-    - [依赖项及版本](#依赖项及版本-1)
+    - [依赖项及版本](#依赖项及版本)
     - [安装库](#安装库)
-    - [配置说明](#配置说明-1)
+    - [配置说明](#配置说明)
       - [配置驱动](#配置驱动)
       - [使用支持的开发板](#使用支持的开发板)
       - [使用自定义开发板](#使用自定义开发板)
     - [示例说明](#示例说明)
-        - [LCD](#lcd)
         - [Touch](#touch)
         - [Panel](#panel)
         - [LVGL v8](#lvgl-v8)
@@ -29,32 +24,6 @@
     - [配置 LVGL](#配置-lvgl)
     - [移植 SquareLine 工程](#移植-squareline-工程)
 
-## 基于 ESP-IDF 框架
-
-### 依赖项及版本
-
-| **依赖项** | **版本** |
-| ---------- | -------- |
-| [esp-idf](https://github.com/espressif/esp-idf) | >= 5.1 |
-| [esp32_io_expander](https://components.espressif.com/components/espressif/esp32_io_expander) | ^0.1.0 |
-| [espressif/esp32_display_panel](https://components.espressif.com/components/espressif/esp32_display_panel) | >0.2.1 |
-### 添加到工程
-
-ESP32_Display_Panel 已上传到 [Espressif 组件库](https://components.espressif.com/)，用户可以通过 `idf.py add-dependency` 命令将它们添加到用户的项目中，例如：
-
-```bash
-idf.py add-dependency "espressif/esp32_display_panel"
-```
-
-或者，用户也可以创建或修改工程目录下的 `idf_component.yml` 文件，详细内容请参阅 [Espressif 文档 - IDF 组件管理器](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/tools/idf-component-manager.html)。
-
-### 配置说明
-
-在使用 esp-idf 开发时，用户可以通过修改 menuconfig 来配置 ESP32_Display_Panel：
-
-1. 运行命令 `idf.py menuconfig`。
-2. 导航到 `Component config` > `ESP Display Panel Configurations`。
-
 ## 基于 Arduino IDE
 
 ### 依赖项及版本
@@ -63,7 +32,7 @@ idf.py add-dependency "espressif/esp32_display_panel"
 | ---------- | -------- |
 | [arduino-esp32](https://github.com/espressif/arduino-esp32) | >= v3.0.0-alpha3 |
 | [ESP32_IO_Expander](https://github.com/esp-arduino-libs/ESP32_IO_Expander) | >= 0.1.0 && < 0.2.0 |
-| [ESP32_Display_Panel](https://github.com/esp-arduino-libs/ESP32_Display_Panel)| >0.2.1 |
+| [ESP32_Display_Panel](https://github.com/esp-arduino-libs/ESP32_Display_Panel)| > 0.2.1 |
 
 ### 安装库
 
