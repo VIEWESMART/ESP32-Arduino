@@ -21,6 +21,8 @@ The ESP32-Arduino repository is an example library of the Arduino framework spec
 ## How to Use examples
 Please refer to the documentation - [How to Use](./docs/How_To_Use.md).
 
+`Note:` 1.3inch, 1.9inch, 2.1 inch please use the corresponding sample, other sizes can be used the rest of the sample
+
 ## Supported Development Boards and Drivers(only for the ESP32_Display_Panel library)
 ### Development Boards
 
@@ -29,6 +31,7 @@ Below is the list of [Supported Development Boards](docs/Board_Instructions.md):
 | **Manufacturer** | **Board Model** |
 | ---------------- | --------------- |
 | [VIEWE](docs/Board_Instructions.md#viewe) | UEDX24320028E-WB-A-2.4, UEDX24320028E-WB-A-2.8, UEDX24320028E-WB-A-3.5-240x320, UEDX24320028E-WB-A-3.5-320x480, DX48480040E-WB-A, UEDX80480043E-WB-A-4.3-800x480, UEDX80480043E-WB-A-4.3-480x272, UEDX80480050E-WB-A, UEDX80480070E-WB-A|
+
 For versions 1.3, 1.9 and 2.1, they haven't been added to the ESP32_Display_Panel yet. So initialization needs to be done with other libraries. There will be three special examples reserved. Besides that, the examples for the rest of the products are universal.
 ## FAQ
 Please refer to the documentation - [FAQ](./docs/FAQ.md).
