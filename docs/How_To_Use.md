@@ -8,6 +8,7 @@
   - [Table of Contents](#table-of-contents)
   - [Arduino IDE](#arduino-ide)
     - [Dependencies and Versions](#dependencies-and-versions)
+    - [Installing arduino-esp32](#installing-arduino-esp32)
     - [Installing the Library](#installing-the-library)
     - [Configuration Instructions](#configuration-instructions)
       - [Configuring Drivers](#configuring-drivers)
@@ -35,9 +36,16 @@
 | [ESP32_IO_Expander](https://github.com/esp-arduino-libs/ESP32_IO_Expander) | >= 0.1.0 && < 0.2.0 |
 | [ESP32_Display_Panel](https://github.com/esp-arduino-libs/ESP32_Display_Panel)| > 0.2.1 |
 
+### Installing arduino-esp32
+For installation of the esp32 in the Arduino IDE, refer to [How_To_Configure_Arduino-esp32](./How_To_Configure_Arduino-esp32.md#install-esp32).
+
 ### Installing the Library
 
 For installation of the ESP32_Display_Panel library, refer to [How to Install ESP32_Display_Panel in Arduino IDE](./FAQ.md#how-to-install-esp32_display_panel-in-arduino-ide).
+
+### Configuration of tools options
+For configuration of `tools` options, refer to [recommended configurations in the Arduino IDE](./Board_Instructions.md#recommended-configurations-in-the-arduino-ide).
+
 
 ### Configuration Instructions
 

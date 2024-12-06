@@ -34,9 +34,15 @@
 | [ESP32_IO_Expander](https://github.com/esp-arduino-libs/ESP32_IO_Expander) | >= 0.1.0 && < 0.2.0 |
 | [ESP32_Display_Panel](https://github.com/esp-arduino-libs/ESP32_Display_Panel)| > 0.2.1 |
 
+### esp32安装
+关于 esp32 的安装，请参阅 [如何在 Arduino IDE 中安装esp32](./How_To_Configure_Arduino-esp32.md#install-esp32)。
+
 ### 安装库
 
 关于 ESP32_Display_Panel 库的安装，请参阅 [如何在 Arduino IDE 中安装 ESP32_Display_Panel](./FAQ_CN.md#如何在-arduino-ide-中安装-ESP32_Display_Panel)。
+
+### 工具选项的配置
+关于 `工具`选项的配置，请参阅 [开发板在Arduino的推荐配置](./Board_Instructions.md#recommended-configurations-in-the-arduino-ide)。
 
 ### 配置说明
 
