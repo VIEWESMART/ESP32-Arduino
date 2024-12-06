@@ -43,6 +43,10 @@ For installation of the esp32 in the Arduino IDE, refer to [How_To_Configure_Ard
 
 For installation of the ESP32_Display_Panel library, refer to [How to Install ESP32_Display_Panel in Arduino IDE](./FAQ.md#how-to-install-esp32_display_panel-in-arduino-ide).
 
+### Configuration of tools options
+For configuration of `tools` options, refer to [recommended configurations in the Arduino IDE](./Board_Instructions.md#recommended-configurations-in-the-arduino-ide).
+
+
 ### Configuration Instructions
 
 Below are detailed instructions on how to configure ESP32_Display_Panel, mainly including [Configuring Drivers](#configuring-drivers), [Using Supported Development Boards](#using-supported-development-boards), and [Using Custom Development Boards](#using-custom-development-boards). These are all optional operations and are configured through specified header files. Users can choose to use them according to their needs, with the following characteristics:
