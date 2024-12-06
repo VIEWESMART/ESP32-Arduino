@@ -1,6 +1,6 @@
 # 如何在Arduino IDE中安装esp32
 
-* [中文版本](./How_To_Use_CN.md)
+* [English Version](./How_To_Configure_Arduino-esp32_CN.md)
 
 ## 目录
 
