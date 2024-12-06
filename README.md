@@ -22,7 +22,7 @@ The ESP32-Arduino repository is an example library of the Arduino framework spec
     * `SquareLine/v8`
     * `...`
 
-## How to Use examples
+## How to Use
 Please refer to the documentation - [How to Use](./docs/How_To_Use.md).
 
 `Note:` 1.3inch, 1.9inch, 2.1 inch please use the corresponding sample, other sizes can be used the rest of the sample
