@@ -1,8 +1,8 @@
-# How to use esp32
+# 如何在Arduino IDE中安装esp32
 
 * [中文版本](./How_To_Use_CN.md)
 
-## Table of Contents
+## 目录
 
 - [如何在Arduino IDE中安装esp32](#如何在Arduino-IDE中安装esp32)
   - [安装Arduino IDE](#安装Arduino-IDE)
