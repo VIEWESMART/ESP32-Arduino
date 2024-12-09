@@ -15,17 +15,19 @@ The ESP32-Arduino repository is an example library of the Arduino framework spec
   * `examples`
     * `1.3inch`
     * `1.9inch`
-    * `2.1inch` 
+    * `2.1inch`
+    * `...` 
     * `LVGL/v8`
     * `Panel/PanelTest`
     * `PlatformIO`
     * `SquareLine/v8`
+    * `Knob`
     * `...`
 
 ## How to Use
 Please refer to the documentation - [How to Use](./docs/How_To_Use.md).
 
-`Note:` 1.3inch, 1.9inch, 2.1 inch please use the corresponding sample, other sizes can be used the rest of the sample
+`Note:` The example folder named with the size is specially used for the product of the corresponding size, such as 1.3inch, 1.9inch, etc., while others are universal, but please note that the general example of the product with the encoder will be placed in Knob
 
 ## Supported Development Boards and Drivers(only for the ESP32_Display_Panel library)
 ### Development Boards
