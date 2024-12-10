@@ -35,6 +35,7 @@
 | [arduino-esp32](https://github.com/espressif/arduino-esp32) | >= v3.0.0-alpha3 |
 | [ESP32_IO_Expander](https://github.com/esp-arduino-libs/ESP32_IO_Expander) | >= 0.1.0 && < 0.2.0 |
 | [ESP32_Display_Panel](https://github.com/esp-arduino-libs/ESP32_Display_Panel)| > 0.2.1 |
+| lvgl | >= 8.3.9 && < v9 |
 
 ### Installing arduino-esp32
 For installation of the esp32 in the Arduino IDE, refer to [How_To_Configure_Arduino-esp32](./How_To_Configure_Arduino-esp32.md#install-esp32).
