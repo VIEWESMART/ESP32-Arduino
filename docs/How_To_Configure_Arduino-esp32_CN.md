@@ -31,12 +31,13 @@
 
       * `注意`:
           * 您可以在不设置附加板管理器 URL 的情况下下载 esp32，但提供的版本不完整，需要精确控制版本时不太方便
-          * 如果下载失败，重置其他开发板管理器地址:
-              *   https://espressif.github.io/arduino-esp32/package_esp32_index.json
-              *   https://espressif.github.io/arduino-esp32/package_esp32_dev_index.json
+          
   * 打开 arduino 并在第二个侧边栏中搜索 “esp32” 以安装第二个。安装时间可能很长，请耐心等待
-
     ![image](https://github.com/user-attachments/assets/a1d597df-0410-439c-aa5e-089a0c3bdef7)
+     * 如果下载失败，重置其他开发板管理器地址:
+          *   https://espressif.github.io/arduino-esp32/package_esp32_index.json
+          *   https://espressif.github.io/arduino-esp32/package_esp32_dev_index.json
+      * 还有一种情况你无法下载成功，你的网络无法访问GitHub（即不能访问外网，无法翻墙），不过无需担心，这里也将给你提供一种方法。点击链接去下载对应的版本即可。（还在整理中，给你带来不便抱歉） 
 
 
 
