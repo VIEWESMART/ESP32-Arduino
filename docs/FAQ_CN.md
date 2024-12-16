@@ -6,9 +6,10 @@
 
 - [常见问题解答](#常见问题解答)
   - [目录](#目录)
-  - [使用 Arduino IDE 开发平台如何读取 ESP32 出厂自带的 Wi-Fi 的 MAC 地址？](#使用Arduino-ide开发平台如何读取ESP32出厂自带的Wi-Fi的MAC地址)
-  - [如何使用 Flash 下载工具将基于 Arduino 开发生成的 bin 文件烧录到 ESP32？](#如何使用Flash下载工具将基于Arduino开发生成的bin文件烧录到ESP32)
-  - [如何更新 esp32-arduino 库版本？](#如何更新esp32-arduino库版本)
+  - [使用 Arduino IDE 开发平台如何读取 ESP32 出厂自带的 Wi-Fi 的 MAC 地址？](#%E4%BD%BF%E7%94%A8-arduino-ide-%E5%BC%80%E5%8F%91%E5%B9%B3%E5%8F%B0%E5%A6%82%E4%BD%95%E8%AF%BB%E5%8F%96-esp32-%E5%87%BA%E5%8E%82%E8%87%AA%E5%B8%A6%E7%9A%84-wi-fi-%E7%9A%84-mac-%E5%9C%B0%E5%9D%80)
+  - [如何使用 Flash 下载工具将基于 Arduino 开发生成的 bin 文件烧录到 ESP32？](#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-flash-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7%E5%B0%86%E5%9F%BA%E4%BA%8E-arduino-%E5%BC%80%E5%8F%91%E7%94%9F%E6%88%90%E7%9A%84-bin-%E6%96%87%E4%BB%B6%E7%83%A7%E5%BD%95%E5%88%B0-esp32
+)
+  - [如何更新 esp32-arduino 库版本？](#%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0-esp32-arduino-%E5%BA%93%E7%89%88%E6%9C%AC)
   - [Arduino 库的目录在哪儿？](#arduino-库的目录在哪儿)
   - [如何在 Arduino IDE 中安装 ESP32\_Display\_Panel？](#如何在-arduino-ide-中安装-esp32_display_panel)
   - [arduino-eps32 的安装目录以及 SDK 的目录在哪儿？](#arduino-eps32-的安装目录以及-sdk-的目录在哪儿)
