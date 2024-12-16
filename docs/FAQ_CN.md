@@ -6,11 +6,31 @@
 
 - [常见问题解答](#常见问题解答)
   - [目录](#目录)
+  - [使用 Arduino IDE 开发平台，如何读取 ESP32 出厂自带的 Wi-Fi 的 MAC 地址？](#使用-Arduino-IDE-开发平台，如何读取-ESP32-出厂自带的-Wi-Fi的MAC地址？)
+  - [如何使用 Flash 下载工具将基于 Arduino 开发生成的 bin 文件烧录到 ESP32？](#如何使用Flash下载工具将基于Arduino开发生成的bin文件烧录到ESP32？)
+  - [如何更新 esp32-arduino 库版本？](#如何更新esp32-arduino库版本？)
   - [Arduino 库的目录在哪儿？](#arduino-库的目录在哪儿)
   - [如何在 Arduino IDE 中安装 ESP32\_Display\_Panel？](#如何在-arduino-ide-中安装-esp32_display_panel)
   - [arduino-eps32 的安装目录以及 SDK 的目录在哪儿？](#arduino-eps32-的安装目录以及-sdk-的目录在哪儿)
   - [使用 ESP32-S3 驱动 RGB LCD 时出现画面漂移问题的解决方案](#使用-esp32-s3-驱动-rgb-lcd-时出现画面漂移问题的解决方案)
   - [如何在 PlatformIO 上使用 ESP32\_Display\_Panel？](#如何在-platformio-上使用-esp32_display_panel)
+ 
+## 使用 Arduino IDE 开发平台，如何读取 ESP32 出厂自带的 Wi-Fi 的 MAC 地址？
+
+  - Arduino-ESP32 开发框架为：https://github.com/espressif/arduino-esp32。
+  - 使用 WiFi.macAddress() 获取 ESP32 的 Wi-Fi 的 MAC 地址。
+  - 还可以参考 `WiFiClientStaticIP 例程 <https://github.com/espressif/arduino-esp32/blob/a59eafbc9dfa3ce818c110f996eebf68d755be24/libraries/WiFi/examples/WiFiClientStaticIP/WiFiClientStaticIP.ino>`_。
+
+
+## 如何使用 Flash 下载工具将基于 Arduino 开发生成的 bin 文件烧录到 ESP32？
+
+  - 请前往 ``File`` -> ``Preferences`` -> ``Show verbose output during`` 勾选 ``compilation``，编译成功后，会打印一条 Python 烧录命令，其中包含待烧录的 bin 文件以及对应的烧录地址。
+  - 在乐鑫官网的 `工具 <https://www.espressif.com/zh-hans/support/download/other-tools>`_ 页面下载 Flash 下载工具，使用 Flash 下载工具烧录时选择 bin 文件，输入对应的烧录地址即可。
+
+
+## 如何更新 esp32-arduino 库版本？
+
+  - 在 ``Tool`` > ``Board`` > ``BoardManager`` 路径下搜索 ``ESP32`` 来选择安装 `esp32-arduino <https://github.com/espressif/arduino-esp32>`_ 库的版本。
 
 ## Arduino 库的目录在哪儿？
 
